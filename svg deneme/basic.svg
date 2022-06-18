@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            property="viewport"
+            content="width=device-width,
+                    initial-scale=1.0"/>
+        <title>GeeksforGeeks</title>
+    </head>
+    <body>
+        <div style="width:300px; height:300px;">
+            <center>
+                <h1 style="color:green">
+                    GeeksforGeeks
+                </h1>
+                <h2>
+                    &lt;a&gt; Tag SVG
+                </h2>
+            </center>
+            <svg width="500" height="500">
+                <a href="http://geeksforgeeks.org">
+                    <circle cx="150" cy="100"
+                            r="80" fill="green">
+                </a>
+            </svg>
+        </div>
+    </body>
+</html>

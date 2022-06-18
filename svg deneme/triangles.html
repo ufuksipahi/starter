@@ -1,0 +1,72 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animated SVG Button</title>
+
+    <style>
+      :root {
+        --dark-color: #635bff;
+        --light-color: #80e9ff;
+      }
+
+      svg {
+        cursor: pointer;
+      }
+
+      #darkGroup {
+        fill: var(--dark-color);
+      }
+      #lightGroup {
+        fill: var(--light-color);
+      }
+      #dark1,
+      #light1,
+      #dark2 {
+        transition: all 1s ease;
+      }
+      #dark2 {
+        transform: translateX(-100%);
+      }
+      svg:hover #light1 {
+        transform: translateX(20%);
+      }
+      svg:hover #dark1 {
+        transform: translateX(40%);
+        opacity: 0;
+      }
+      svg:hover #dark2 {
+        transform: translateX(0%);
+      }
+    </style>
+  </head>
+
+<body>
+  <svg width="226" height="214" viewBox="0 0 226 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="triangles">
+        <g id="lightGroup">
+            <path id="light1" opacity="0.6" d="M63 75.5L30.75 94.1195V56.8805L63 75.5Z" />
+        </g>
+        <g id="darkGroup">
+            <path id="dark1" opacity="0.8" d="M63.25 76L31 95.0526V56.9474L63.25 76Z"  />
+            <path id="dark2" opacity="0.8" d="M90 76L57.75 95.0526V56.9474L90 76Z" />
+        </g>
+    </g>
+</svg>
+<script>
+
+  const svg = document.getElementById('triangles');
+
+  svg.onclick = (e) => {
+    const colors = ['red', 'blue', 'green', 'orange', 'pink', 'purple']
+    const rando = () => colors[Math.floor(Math.random() * colors.length)];
+    document.documentElement.style.cssText = `
+    --dark-color: ${rando()};
+    --light-color: ${rando()}; 
+    `
+  }
+
+</script>
+</body>
+
+</html>
